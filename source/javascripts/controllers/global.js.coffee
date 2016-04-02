@@ -9,7 +9,7 @@
 # ------------------------------------------------
 # Create Global Module and Specify Function Calls
 # ------------------------------------------------
-OO.runGlobalJS = ->
+LCW.runGlobalJS = ->
 
 # # Fit element to window
 # # ------------------------------------------------

@@ -9,9 +9,9 @@
 # ------------------------------------------------
 # Create Index Module and Specify Function Calls
 # ------------------------------------------------
-OO.Home = ->
+LCW.Home = ->
 
 # Fit element to window
 # ------------------------------------------------
-  fitToBrowser = new OO.FitToBrowser
-  fitToBrowser.fitToWindow()
+  fitToBrowser = new LCW.FitToBrowser
+  fitToBrowser.init()

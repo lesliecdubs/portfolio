@@ -7,20 +7,20 @@
 # ------------------------------------------------
 # Specify Namespace Object
 # ------------------------------------------------
-window.OO       ||= {}
-window.OO.Cache ||= {}
+window.LCW       ||= {}
+window.LCW.Cache ||= {}
 
 # ------------------------------------------------
 # Call Page Specific JS
 # ------------------------------------------------
-OO.runPageJs = () ->
+LCW.runPageJs = () ->
   if controller = document.body.getAttribute("data-router")
-    OO.Cache[controller] ||= OO[controller]
-    if OO.Cache[controller] then OO.Cache[controller]()
+    LCW.Cache[controller] ||= LCW[controller]
+    if LCW.Cache[controller] then LCW.Cache[controller]()
 
 # ------------------------------------------------
 # Call on Doc Ready
 # ------------------------------------------------
 document.addEventListener 'DOMContentLoaded', ->
-  OO.runGlobalJS()
-  OO.runPageJs()
+  LCW.runGlobalJS()
+  LCW.runPageJs()

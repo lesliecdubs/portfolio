@@ -5,11 +5,12 @@ router: Home
 ---
 
 header.header.js-fit-to-window
-  h1 Leslie Cohn-Wein
+  .header__video-wrapper
+    video class='header__video js-video' autoplay='true' preload='auto' muted='muted' height='100%' width='auto'
+      source src='/videos/paint-pour.mp4' type='video/mp4'
+
+  .header__logo
+    img src='/images/logo.png'
 
 main.portfolio-grid
   h2 Content goes here
-/ .welcome
-/   h1 Middleman is Watching
-/   p.doc
-/     a href='http://middlemanapp.com/' Read Online Documentation
