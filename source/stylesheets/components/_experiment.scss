@@ -1,0 +1,173 @@
+//  ==========================================================================
+//
+//  Header Styles
+//
+//  ==========================================================================
+
+//  ==========================================================================
+//  Base & Backgrounds
+//  ==========================================================================
+@import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+
+body, html {
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+.main {
+  background: image_url('experiment/bkgd.jpg') repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.4);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+//  ==========================================================================
+//  Overlay group positioning
+//  ==========================================================================
+.overlay-group {
+  left: 0;
+  margin: 0 auto;
+  max-width: 365px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+//  ==========================================================================
+//  Overlay box
+//  ==========================================================================
+.overlay-box {
+  background: rgba(0,0,0,0.4);
+  border: 4px solid #fdc82f;
+  border-left: 0;
+  border-radius: 3px;
+  color: white;
+  margin: 0 auto;
+  padding: 42px 60px;
+  position: relative;
+
+  // Left split border
+  &:before,
+  &:after {
+    background: #fdc82f;
+    content: '';
+    position: absolute;
+    width: 4px;
+  }
+
+  &:before {
+    height: 34.5%;
+    left: 0;
+    top: -1px;
+  }
+
+  &:after {
+    height: 34%;
+    left: 0;
+    bottom: -1px;
+  }
+
+  // Paraph copy
+  &__p {
+    letter-spacing: 0.015em;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+//  ==========================================================================
+//  Number circles
+//  ==========================================================================
+.overlay-number {
+  background: rgba(0,0,0,0.4);
+  border-bottom-left-radius: 50px; // 2x the width
+  border-top-left-radius: 50px;    // 2x the width
+  border-right: 0;
+  color: white;
+  height: 50px;
+  left: -25px;
+  position: absolute;
+  top: 50%;
+  width: 25px;
+  @include box-sizing(border-box);
+  @include transform(translateY(-50%));
+
+  &__interior {
+    border-bottom-left-radius: 32px; // 2x the width
+    border-top-left-radius: 32px;    // 2x the width
+    border: 4px solid #fdc82f;
+    border-right: 0;
+    display: inline-block;
+    height: 32px;
+    left: 5px;
+    position: relative;
+    top: 50%;
+    width: 16px;
+    @include transform(translateY(-50%));
+
+    &:after {
+      border-bottom-right-radius: 32px;
+      border-top-right-radius: 32px;
+      border: 4px solid #fdc82f;
+      border-left: 0;
+      content: '';
+      display: inline-block;
+      height: 32px;
+      left: 16px;
+      position: absolute;
+      top: 50%;
+      width: 16px;
+      @include transform(translateY(-50%));
+    }
+  }
+
+  &__interior-span {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+    width: 30px;
+  }
+}
+
+//  ==========================================================================
+//  Arrow
+//  ==========================================================================
+.overlay-arrow {
+  background: transparent;
+  border-radius: 0px 0px 0px 120%; // Curve radius
+  border: solid 4px #fdc82f;
+  border-right: 0;
+  border-top: 0;
+  height: 100px;
+  left: -142px;
+  margin: 20px;
+  position: absolute;
+  top: -25%;
+  width: 100px;
+
+  // Square with borders, rotated
+  // and hide two borders
+  &:before {
+    border: 4px solid #fdc82f;
+    border-bottom: 0;
+    border-right: 0;
+    content: '';
+    display: block;
+    height: 30px;
+    left: -20px;
+    position: relative;
+    top: 4px;
+    width: 30px;
+    @include transform(rotate(48deg));
+  }
+}
